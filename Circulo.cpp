@@ -50,6 +50,7 @@ double Circulo::Area(double radio){
 	double area=pi*(radio*radio);
 }
 
+
 Circulo::~Circulo(){
 	cout<<"Eliminado Circulo"<<endl;
 }
