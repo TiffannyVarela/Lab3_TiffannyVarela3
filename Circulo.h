@@ -22,7 +22,6 @@ class Circulo
 		void setCircunferencia(double);
 
 		double Area(double);
-		double Perimetro(double);
 
 		~Circulo();
 	
