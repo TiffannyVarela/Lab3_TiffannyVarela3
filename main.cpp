@@ -88,6 +88,8 @@ int main(){
 				break;
 
 			case 5:
+				esfera = new Esfera(circulo);
+				cout<<"Volumen: "<<esfera->Volumen(circulo);
 				break;
 		}
 		delete esfera;

@@ -24,6 +24,6 @@ double Esfera::Volumen(Circulo* circulo){
 	double vol=((4*pi)*(circulo->getRadio()*circulo->getRadio()*circulo->getRadio()))/3;
 	return vol;
 }
-Esfera~Esfera(){
+Esfera::~Esfera(){
 	cout<<"Eliminando Esfera"<<endl;
 }

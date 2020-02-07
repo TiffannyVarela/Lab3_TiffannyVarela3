@@ -13,7 +13,9 @@ class Esfera
 
 		Circulo* getCirculo();
 		void setCirculo(Circulo*);
-		
+
+		double Volumen(Circulo*);
+
 		~Esfera();
 	
 };
