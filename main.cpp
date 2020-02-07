@@ -1,4 +1,5 @@
-#include "Piramide.h" 
+#include "Piramide.h"
+#include "Esfera.h"
 #include "Triangulo.h"
 #include "Circulo.h"
 #include <iostream>
@@ -14,6 +15,7 @@ int main(){
 	Triangulo* triangulo;
 	Circulo* circulo;
 	Piramide* piramide;
+	Esfera* esfera;
 	int high;
 	int l1, l2,l3;
 	double radio;
@@ -88,6 +90,7 @@ int main(){
 			case 5:
 				break;
 		}
+		delete esfera;
 		delete piramide;
 		delete triangulo;
 		delete circulo;
