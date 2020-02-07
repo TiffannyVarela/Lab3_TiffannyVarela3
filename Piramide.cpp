@@ -33,3 +33,6 @@ double Piramide::Volumen(Triangulo* triangulo, int high){
 	return volumen;
 }
 
+Piramide::~Piramide(){
+	cout<<"Eliminado Piramide"<<endl;
+}

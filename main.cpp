@@ -1,3 +1,4 @@
+#include "Piramide.h" 
 #include "Triangulo.h"
 #include "Circulo.h"
 #include <iostream>
@@ -12,6 +13,7 @@ int main(){
 	int num;
 	Triangulo* triangulo;
 	Circulo* circulo;
+	Piramide* piramide;
 	int high;
 	int l1, l2,l3;
 	double radio;
@@ -61,54 +63,32 @@ int main(){
 				break;
 
 			case 2:
-			/*	cout<<"Lado A: ";
-				cin>>l1;
-				while(l1<0){
-                                        cout<<"El numero debe de ser positivo"<<endl;
-                                        cout<<"Lado A: ";
-                                        cin>>l1;
-                                }
-				cout<<"Lado B: ";
-                                cin>>l2;
-				while(l2<0){
-                                        cout<<"El numero debe de ser positivo"<<endl;
-                                        cout<<"Lado B: ";
-                                        cin>>l2;
-                                }
-				cout<<"Lado C: ";
-                                cin>>l3;
-				while(l3<0){
-                                        cout<<"El numero debe de ser positivo"<<endl;
-                                        cout<<"Lado C: ";
-                                        cin>>l3;
-                                }
-				triangulo = new Triangulo(l1, l2,l3);*/
 				cout<<"Area: "<<triangulo->getArea()<<endl;
 				cout<<"Altura: "<<triangulo->gethigh()<<endl;
-			//	delete triangulo;
 				break;
 
 			case 3:
-			/*	cout<<"Radio: ";
-				cin>>radio;
-				while(radio<0){
-                                        cout<<"El numero debe de ser positivo"<<endl;
-                                        cout<<"Radio: ";
-                                        cin>>radio;
-                                }
-				circulo = new Circulo(radio);*/
 				cout<<"Diametro: "<<circulo->getDiametro()<<endl;
 				cout<<"Circunferencia: "<<circulo->getCircunferencia()<<endl;
 				cout<<"Area: "<<circulo->Area(radio)<<endl;
-			//	delete circulo;	
 				break;
 
 			case 4:
+				cout<<"Ingrese la altura: ";
+				cin>>high;
+				while(high<0){
+					cout<<"Altura debe ser positiva"<<endl;
+					cout<<"Ingrese altura: ";
+					cin>>high;
+				}
+				piramide = new Piramide(triangulo, high);
+				cout<<"Volumen: "<<piramide->Volumen(triangulo, high)<<endl;
 				break;
 
 			case 5:
 				break;
 		}
+		delete piramide;
 		delete triangulo;
 		delete circulo;
 		cout<<"Desea volver?: \n1.Si\n2.No"<<endl;
