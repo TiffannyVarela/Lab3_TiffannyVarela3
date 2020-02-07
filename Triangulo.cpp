@@ -62,5 +62,5 @@ double Triangulo::getArea(){
 }
 
 Triangulo::~Triangulo(){
-	cout<<"Eliminado"<<endl;
+	cout<<"Eliminado Triangulo"<<endl;
 }
