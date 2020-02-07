@@ -1,21 +1,55 @@
+#include "Triangulo.h"
 #include <iostream>
 using namespace std;
 
 int Ejercicio1(int);
 int menu();
+int val(int);
 
 int main(){
 	int resp=-1;
 	int num;
+	Triangulo* triangulo;
+	int l1, l2,l3;
 	do{
 		switch(menu()){
 			case 1:
 				cout<<"Ingrese un numero: ";
 				cin>>num;
+				while(num<0){
+					cout<<"el numero debe de ser positivo"<<endl;
+					cout<<"Ingrese un numero: ";
+					cin>>num;
+				}
 				cout<<Ejercicio1(num)<<endl;
 				break;
 
 			case 2:
+				cout<<"Lado A: ";
+				cin>>l1;
+				while(l1<0){
+                                        cout<<"El numero debe de ser positivo"<<endl;
+                                        cout<<"Lado A: ";
+                                        cin>>l1;
+                                }
+				cout<<"Lado B: ";
+                                cin>>l2;
+				while(l2<0){
+                                        cout<<"El numero debe de ser positivo"<<endl;
+                                        cout<<"Lado B: ";
+                                        cin>>l2;
+                                }
+				cout<<"Lado C: ";
+                                cin>>l3;
+				while(l3<0){
+                                        cout<<"El numero debe de ser positivo"<<endl;
+                                        cout<<"Lado C: ";
+                                        cin>>l3;
+                                }
+				triangulo = new Triangulo(l1, l2,l3);
+				cout<<"Area: "<<triangulo->getArea()<<endl;
+				cout<<"Altura: "<<triangulo->gethigh()<<endl;
+				delete triangulo;
 				break;
 
 			case 3:
@@ -40,16 +74,15 @@ int menu(){//inicio metodo menu
         <<"2.- Calcular area de triangulo"<<endl
 		<<"3.- Calcular area de circulo"<<endl
 		<<"4.- Calcular volumen de piramide"<<endl
-		<<"5.- Calcular volumen de esfera"<<endl
-		<<"6.- Salir"<<endl;
+		<<"5.- Calcular volumen de esfera"<<endl;
         cout<<"Ingrese una opcion: ";
         int opcion =0;
         cin>>opcion;
-        if(opcion>=1 && opcion<= 6){
+        if(opcion>=1 && opcion<= 5){
                 return opcion;
         }
 		else{
-        	cout<<"La opcion elegida no es valida, ingrese una opcion entre 1 y 6"<<endl;
+        	cout<<"La opcion elegida no es valida, ingrese una opcion entre 1 y 5"<<endl;
         }
  	}//end del while
         return 0;
@@ -87,3 +120,5 @@ int Ejercicio1(int num){
 	}
 	return fin;
 }
+
+

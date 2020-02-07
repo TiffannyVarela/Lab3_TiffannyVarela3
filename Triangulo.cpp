@@ -1,16 +1,22 @@
 #include "Triangulo.h"
+#include <math.h>
 #include <iostream>
 using namespace std;
 
 Triangulo::Triangulo(){
+	l1=0;
+	l2=0;
+	l3=0;
+	area=0;
+	high=0;
 }
 
-Triangulo::Triangulo(int l1, int l2, int l3, int high){
+Triangulo::Triangulo(int l1, int l2, int l3){
 	this -> l1=l1;
 	this -> l2=l2;
 	this -> l3=l3;
-	this -> high=high;
-
+	area=Calculo(l1,l2,l3);
+	high=(2*area)/l2;
 }
 
 int Triangulo::getL1(){
@@ -45,6 +51,16 @@ void Triangulo::sethigh(int high){
 	high=high;
 }
 
-int Triangulo::Calculo(int l1, int l2, int l3){
-	
+double Triangulo::Calculo(int l1, int l2, int l3){
+	int s = (l1+l2+l3)/2;
+	double area = sqrt(s*((s-l1)*(s-l2)*(s-l3)));
+	return area;
+}
+
+double Triangulo::getArea(){
+	return area;
+}
+
+Triangulo::~Triangulo(){
+	cout<<"Eliminado"<<endl;
 }
