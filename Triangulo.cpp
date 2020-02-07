@@ -57,6 +57,12 @@ double Triangulo::Calculo(int l1, int l2, int l3){
 	return area;
 }
 
+double Triangulo::Area(int l1, int l2, int l3){
+	int s = (l1+l2+l3)/2;
+	double area = sqrt(s*((s-l1)*(s-l2)*(s-l3)));
+	return area;
+}
+
 double Triangulo::getArea(){
 	return area;
 }

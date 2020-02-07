@@ -27,6 +27,8 @@ class Triangulo
         int gethigh();
         void sethigh(int);
 
+        double Area(int,int,int);
+
         double getArea();
 
 		~Triangulo();

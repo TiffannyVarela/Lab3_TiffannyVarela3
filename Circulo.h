@@ -6,20 +6,22 @@ class Circulo
 {
 	private:
 		double radio, diametro, circunferencia;
-		double Circunferencia(int);
+		double Circunferencia(double);
 
 	public:
 		Circulo();
-		Circulo(int);
+		Circulo(double);
 
 		double getRadio();
 		void setRadio(double);
 
-		double setDiametro();
-		void getDiametro(double);
+		double getDiametro();
+		void setDiametro(double);
 
 		double getCircunferencia();
 		void setCircunferencia(double);
+
+		double Area(double);
 
 		~Circulo();
 	

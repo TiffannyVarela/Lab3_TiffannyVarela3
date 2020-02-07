@@ -15,27 +15,27 @@ Circulo::Circulo(double radio){
 	circunferencia=Circunferencia(radio);
 }
 
-double Triangulo::getradio(){
+double Circulo::getRadio(){
 	return radio;
 }
 
-void Triangulo::setradio(double radio){
+void Circulo::setRadio(double radio){
 	radio=radio;
 }
 
-double Triangulo::getdiametro(){
+double Circulo::getDiametro(){
 	return diametro;
 }
 
-void Triangulo::setdiametro(double diametro){
+void Circulo::setDiametro(double diametro){
 	diametro=diametro;
 }
 
-double Triangulo::getcircunferencia(){
+double Circulo::getCircunferencia(){
 	return circunferencia;
 }
 
-void Triangulo::setcircunferencia(double circunferencia){
+void Circulo::setCircunferencia(double circunferencia){
 	circunferencia=circunferencia;
 }
 
@@ -43,6 +43,11 @@ double Circulo::Circunferencia(double radio){
 	float pi = 3.14159265359;
 	double resp = 2*pi*radio;
 	return resp;
+}
+
+double Circulo::Area(double radio){
+	float pi = 3.14159265359;
+	double area=pi*(radio*radio);
 }
 
 Circulo::~Circulo(){
