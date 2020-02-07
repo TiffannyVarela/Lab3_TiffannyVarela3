@@ -1,4 +1,5 @@
 #include "Triangulo.h"
+#include "Circulo.h"
 #include <iostream>
 using namespace std;
 
@@ -10,8 +11,43 @@ int main(){
 	int resp=-1;
 	int num;
 	Triangulo* triangulo;
+	Circulo* circulo;
+	int high;
 	int l1, l2,l3;
+	double radio;
 	do{
+		cout<<"Lado A: ";
+                cin>>l1;
+                while(l1<0){
+                	cout<<"El numero debe de ser positivo"<<endl;
+                	cout<<"Lado A: ";
+        	        cin>>l1;
+                }
+                cout<<"Lado B: ";
+                cin>>l2;
+                while(l2<0){
+                        cout<<"El numero debe de ser positivo"<<endl;
+                        cout<<"Lado B: ";
+                        cin>>l2;
+                }
+                cout<<"Lado C: ";
+                cin>>l3;
+                while(l3<0){
+                        cout<<"El numero debe de ser positivo"<<endl;
+                        cout<<"Lado C: ";
+                        cin>>l3;
+                }
+                triangulo = new Triangulo(l1, l2,l3);
+
+		cout<<"Radio: ";
+                cin>>radio;
+                while(radio<0){
+	                cout<<"El numero debe de ser positivo"<<endl;
+                        cout<<"Radio: ";
+                        cin>>radio;
+                }
+                circulo = new Circulo(radio);
+
 		switch(menu()){
 			case 1:
 				cout<<"Ingrese un numero: ";
@@ -25,7 +61,7 @@ int main(){
 				break;
 
 			case 2:
-				cout<<"Lado A: ";
+			/*	cout<<"Lado A: ";
 				cin>>l1;
 				while(l1<0){
                                         cout<<"El numero debe de ser positivo"<<endl;
@@ -46,13 +82,25 @@ int main(){
                                         cout<<"Lado C: ";
                                         cin>>l3;
                                 }
-				triangulo = new Triangulo(l1, l2,l3);
+				triangulo = new Triangulo(l1, l2,l3);*/
 				cout<<"Area: "<<triangulo->getArea()<<endl;
 				cout<<"Altura: "<<triangulo->gethigh()<<endl;
-				delete triangulo;
+			//	delete triangulo;
 				break;
 
 			case 3:
+			/*	cout<<"Radio: ";
+				cin>>radio;
+				while(radio<0){
+                                        cout<<"El numero debe de ser positivo"<<endl;
+                                        cout<<"Radio: ";
+                                        cin>>radio;
+                                }
+				circulo = new Circulo(radio);*/
+				cout<<"Diametro: "<<circulo->getDiametro()<<endl;
+				cout<<"Circunferencia: "<<circulo->getCircunferencia()<<endl;
+				cout<<"Area: "<<circulo->Area(radio)<<endl;
+			//	delete circulo;	
 				break;
 
 			case 4:
@@ -61,6 +109,8 @@ int main(){
 			case 5:
 				break;
 		}
+		delete triangulo;
+		delete circulo;
 		cout<<"Desea volver?: \n1.Si\n2.No"<<endl;
 		cin>>resp;
 	}while(resp!=2);
